@@ -209,6 +209,8 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
+<p>This is a classification problem because our goal is to divide data into discrete categories - studentes requiring intervention and those who do not. 
+If the output of our predection were to be continuous then it would be a regression problem. For example, if we were to build a model for prediction the percentage likelihood that a student will require early intervention then it would be a regression problem.</p>
 
 </div>
 </div>
@@ -225,7 +227,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -277,14 +279,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># TODO: Calculate number of features</span>
-<span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="c1"># TODO: Calculate passing students</span>
 <span class="n">n_passed</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;passed == &quot;yes&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -314,7 +316,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of students: 395
-Number of features: 31
+Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
 Graduation rate of the class: 67.09%
@@ -586,6 +588,7 @@ b. Effective if the training data is large</li>
 <p>Weaknesses - 
 a. Need to determine the value of K(nearest neighbors) to be used
 b. High computation cost because we need to calculate the distance of each query instance to all training samples.</p>
+<p>I considered these models in particular because we have a small number of data samples, our data is labeled and our prediction is a discrete set of values - yes or no.</p>
 
 </div>
 </div>
@@ -1025,6 +1028,8 @@ Name: passed, dtype: object
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
 Classifying a new student using the K-nearest neighbor classification involves taking k(in our example above k=5 by sklearn default) closest matching students from our training data based on their features and then classifying the new student by the majority vote of these k(5 in our example) students' classifications.</p>
+<p>A larger value of K will reduce the effect of noice in the data but it will make the boundaries between the various prediction categories less distinct.</p>
+<p>The KNN is considered a lazy learning algorithm because it requires almost no training phase. We need all the training samples during the testing and prediction phases. So it requires more time and memory compared to other supervised learning algorithms such as SVM(because we only need the support vectors at the prediction time).</p>
 
 </div>
 </div>
