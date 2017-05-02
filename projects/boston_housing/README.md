@@ -1,42 +1,46 @@
-# Predicting Boston Housing Prices
-# Model Evaluation & Validation Project
+# Machine Learning Engineer Nanodegree
+# Model Evaluation and Validation
+## Project: Predicting Boston Housing Prices
 
-## Install
+### Install
 
-This project requires Python 2.7 and the following Python libraries installed:
+This project requires **Python 2.7** and the following Python libraries installed:
 
 - [NumPy](http://www.numpy.org/)
+- [Pandas](http://pandas.pydata.org/)
+- [matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-In addition, you will need to be able to run an iPython Notebook to complete this project.
+You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
 
-## Code
+If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer.
 
-Template code is provided in the `boston_housing.ipynb` notebook file. While some code has already been implemented to get you started, you will need to implement additional functionality when requested throughout the notebook.
+### Code
 
-## Run
+Template code is provided in the `boston_housing.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `housing.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
 
-In a terminal/command window, go to the top-level project directory `boston_housing/` (that contains this README). Then run:
+### Run
 
-```ipython notebook boston_housing.ipynb```
+In a terminal or command window, navigate to the top-level project directory `boston_housing/` (that contains this README) and run one of the following commands:
 
-## Data
+```bash
+ipython notebook boston_housing.ipynb
+```  
+or
+```bash
+jupyter notebook boston_housing.ipynb
+```
 
-The dataset used in this project is included with the scikit-learn library ([`sklearn.datasets.load_boston`](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston)). You do not have to download it separately.
+This will open the Jupyter Notebook software and project file in your browser.
 
-It contains the following attributes for each housing area, including median value (which you will try to predict):
+### Data
 
-- CRIM: per capita crime rate by town
-- ZN: proportion of residential land zoned for lots over 25,000 sq.ft.
-- INDUS: proportion of non-retail business acres per town
-- CHAS: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)
-- NOX: nitric oxides concentration (parts per 10 million)
-- RM: average number of rooms per dwelling
-- AGE: proportion of owner-occupied units built prior to 1940
-- DIS: weighted distances to five Boston employment centres
-- RAD: index of accessibility to radial highways
-- TAX: full-value property-tax rate per $10,000
-- PTRATIO: pupil-teacher ratio by town
-- B: 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
-- LSTAT: % lower status of the population
-- MEDV: Median value of owner-occupied homes in $1000's
+The modified Boston housing dataset consists of 490 data points, with each datapoint having 3 features. This dataset is a modified version of the Boston Housing dataset found on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Housing).
+
+**Features**
+1.  `RM`: average number of rooms per dwelling
+2. `LSTAT`: percentage of population considered lower status
+3. `PTRATIO`: pupil-student ratio by town
+
+**Target Variable**
+4. `MEDV`: median value of owner-occupied homes
