@@ -11840,7 +11840,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the visualization code</span>
@@ -11889,8 +11889,8 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-At times, the smartcab doesn't seem to be moving at all during the simulation and when it does it doesn't seem to be moving efficiently towards the destination.
-The driving agent receives positive rewards when the cab doesn't move at the red light and negative rewards when the can doesn't move at the green light.</p>
+The smartcab is not moving at all during the simulation when running the default agent.py.
+The driving agent receives positive rewards when the cab doesn't move at the red light and negative rewards when the cab doesn't move at the green light.</p>
 
 </div>
 </div>
@@ -11969,7 +11969,7 @@ Run the agent.py file after setting the flags from projects/smartcab folder inst
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_no-learning&#39; log file from the initial simulation results</span>
@@ -15772,8 +15772,8 @@ Using the state-space definition: ('waypoint', 'light', 'left', 'oncoming')</p>
 <p><strong>Answer:</strong></p>
 <p>The two major issues that prevent us from considering future rewards are that</p>
 <ol>
-<li>the agent doesn't take into account how far it is from the the destination. The waypoint input only provides the direction of the destination and not he distance. So if you were to include that in the state space, it would multiple the state space by the total number of cells (6<em>8=48), which would result in 36</em> 48 states, which is too many to handle.</li>
-<li>The destination is always changing and there are many other agents acting on their own. So if you were to include their states in the state space then also the state space would grow considerably.</li>
+<li>The destination is always changing. So with each trial, a state will have a different reward based on its direction and distance from the changing destination. In this scenario, using future rewards would not lead to an optimal policy. </li>
+<li>There are many other agents acting in the environment and so using future rewards would not help because the behaviour of these other agents is not predictable.</li>
 </ol>
 
 </div>
